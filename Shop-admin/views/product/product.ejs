@@ -1,0 +1,76 @@
+<h1> Title: <%= item.title %></h1>
+
+<form action="<%= `save/${item.id}` %>" method="post" class="product-edit">
+    <div class="product-edit-fields">
+
+        <div class="field">
+            <label for="item-title">Title:</label>
+            <input id="item-title" type="text" name="title" value="<%= item.title %>">
+        </div>
+
+        <div class="field">
+            <label for="item-description">Description:</label>
+            <textarea id="item-description" name="description" rows="3"><%= item.description %></textarea>
+        </div>
+
+        <div class="field">
+            <label for="item-price">Price:</label>
+            <input id="item-price" type="text" name="price" value="<%= item.price %>">
+        </div>
+
+        <div class="field">
+            <label for="item-new-images">New images URLs (use line break or a comma):</label>
+            <textarea id="item-new-images" name="newImages" rows="3"></textarea>
+        </div>
+
+    </div>
+
+    <% if(item.comments?.length) { %>
+        <h2>Comments</h2>
+        <div class="product-edit-comments">
+            <% item.comments.forEach(function(comment) { %>
+                <%- include('product-comment', { comment: comment }) %> 
+            <!-- фича ejs =>  название шаблона  |  передаем данные -->
+            <% })%>
+        </div>
+    <% } %>
+
+    <% if(item.images?.length) {%>
+        <h2>Images</h2>
+        <div class="product-edit-images">
+            <% item.images.forEach(function(image) {%>
+                <%- include('product-image', {image: image}) %>
+            <% }) %>
+        </div>
+    <% } %>
+
+    <% if(similarProducts?.length){ %>
+
+        <h2>Similar products :</h2>
+        <div class="similar-products-list">
+            <% similarProducts.forEach(function(similarProduct) { %>
+                <%- include('similarProduct', {similarProduct: similarProduct}) %>
+            <% }) %>    
+        </div>
+    
+    <% } %>
+
+    <% if(otherProducts?.length) { %>
+
+        <h2>Other products:</h2>
+        <div class="other-products-list">
+            <% otherProducts.forEach(function(otherProduct) { %>
+                <%- include('other-products', {otherProduct: otherProduct}) %>
+            <% }) %>
+        </div>
+
+    <% } %>
+
+
+    <div class="product-edit-footer">
+        <button type="submit">Save changes</button>
+        <a href="<%= `remove-product/${item.id}` %>">Delete product</a>
+    </div>
+    
+</form>
+

@@ -1,0 +1,22 @@
+<div class="product-coment">
+    <div>
+
+        <strong>
+            <%= comment.name %>
+        </strong>
+
+        <div>
+            <%= comment.email %>
+        </div>
+
+        <div>
+            <%= comment.body %>
+        </div>
+
+        <div class="remove-mark">
+            <label for="<%= comment.id %>">Mark to remove</label>
+            <input id="<%= comment.id %>" type="checkbox" value="<%= comment.id %>" name="commentsToRemove">
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,107 @@
+.productList_header{
+    text-align: center;
+    h1{
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+}
+
+.productsList_filter{
+    text-align: center;
+    margin-bottom: 200px;
+    .filters_line{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+
+        .filter_title{
+            margin-right: 20px;
+
+            & > input {
+                width: 200px;
+                padding: 10px;
+                margin-left: 5px;
+                margin-bottom: 10px;
+                border-radius: 10px;
+                transition: all 0.3s ease;
+
+                &:hover{
+                    border-radius: 20px;
+                }
+            }
+        }
+
+        .filter_price{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .filter_priceFrom{
+                margin-right: 20px;
+
+                & > input {
+                    width: 200px;
+                    padding: 10px;
+                    margin-left: 5px;
+                    margin-bottom: 10px;
+                    border-radius: 10px;
+                    transition: all 0.3s ease;
+    
+                    &:hover{
+                        border-radius: 20px;
+                    }
+                }
+            }
+
+            .filter_priceTo{
+                margin-right: 20px;
+
+                & > input {
+                    width: 200px;
+                    padding: 10px;
+                    margin-left: 5px;
+                    margin-bottom: 10px;
+                    border-radius: 10px;
+                    transition: all 0.3s ease;
+    
+                    &:hover{
+                        border-radius: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.productsList{
+    display: flex;
+    justify-content: center;
+
+    .productsListInner{
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    
+        .product_card{
+            display: inline-block;
+            background-color: #cac6c62f;
+            width: 300px;
+            padding: 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+    
+            .product_title{
+                a{
+                    color: #111;
+                }
+            }
+    
+            &:hover{
+                background-color: #cac6c64b;
+            }
+        }
+    }
+    
+}

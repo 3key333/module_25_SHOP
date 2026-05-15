@@ -1,0 +1,22 @@
+<h1>Add new product</h1>
+
+<form action="/<%= process.env.ADMIN_PATH %>/products" method="post" class="new-product">
+
+    <div class="new-product-title-block">
+        <label for="new-product-title">Title:</label>
+        <input id="new-product-title" type="text" name="title">
+    </div>
+
+    <div class="new-product-description-block">
+        <label for="new-product-description">Description:</label>
+        <textarea id="new-product-description" type="text" name="description"></textarea>
+    </div>
+
+    <div class="new-product-price-block">
+        <label for="new-product-price">Price:</label>
+        <input id="new-product-price" type="text" name="price">
+    </div>
+
+
+    <button type="submit">Save changes</button>
+</form>
